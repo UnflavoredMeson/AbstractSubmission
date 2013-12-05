@@ -1,0 +1,29 @@
+@(signup: Form[User])
+
+@import helper._
+
+<html>
+    <head>
+        <title>Sign Up for Abstract Submission</title>
+    </head>
+    <body>
+        <header>
+            <a href="@routes.Application.index" id="logo"><span>Abstract</span> Submission</a>
+        </header>
+
+    <h2>Add a new Abstract</h2>
+    
+    @form(routes.Application.newUser()) {
+        
+        @inputText(signup("email")) 
+        
+        @inputText(signup("fullname"))
+        
+        @inputPassword(signup("password"))
+       
+        <input type="submit" value="Create">
+        
+    }
+    
+    </body>
+    </html>

@@ -1,0 +1,53 @@
+@(abssubmissions: List[AbsSubmission], abssubmissionForm: Form[AbsSubmission], user : User)
+
+@import helper._
+
+@main("Submitted Abstracts", user) {
+    
+    <h1>@abssubmissions.size() submission(s)</h1>
+    
+    <ul>
+        @for(abssubmission <- abssubmissions) {
+            <li>
+                @abssubmission.title
+                
+                @abssubmission.cite
+                
+                @abssubmission.link
+                
+                @abssubmission.url
+                
+                @abssubmission.publicationDate
+                
+                @abssubmission.abstractBody
+                <br />
+                <br />
+                
+                @form(routes.Application.deleteabsSubmission(abssubmission.id)) {
+                    <input type="submit" value="Delete">
+                }
+            </li>
+        }
+    </ul>
+    
+    <h2>Add a new Abstract</h2>
+    
+    @form(routes.Application.newabsSubmission()) {
+        
+        @inputText(abssubmissionForm("title")) 
+        
+        @inputText(abssubmissionForm("cite"))
+        
+        @inputText(abssubmissionForm("link"))
+        
+        @inputText(abssubmissionForm("url"))
+        
+        @inputDate(abssubmissionForm("publicationDate"))
+        
+        @inputText(abssubmissionForm("abstractBody"))
+       
+        <input type="submit" value="Create">
+        
+    }
+    
+}

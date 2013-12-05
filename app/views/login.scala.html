@@ -1,0 +1,37 @@
+@(loginform: Form[Application.Login])
+
+@import helper._
+
+<html>
+    <head>
+        <title>Abstract Submission</title>
+    </head>
+    <body>
+        <header>
+            <a href="@routes.Application.index" id="logo"><span>Abstract</span> Submission</a>
+        </header>
+        
+        @form(routes.Application.authenticate()) {
+   <h1>Sign in</h1>
+   
+   @if(loginform.hasGlobalErrors) {
+    <p class="error">
+        @loginform.globalError.message
+    </p>
+}
+
+@if(flash.contains("success")) {
+    <p class="success">
+        @flash.get("success")
+    </p>
+}
+
+        @inputText(loginform("email")) 
+   
+        @inputPassword(loginform("password"))
+       
+        <input type="submit" value="Login">
+}
+    
+    </body>
+</html>
