@@ -49,10 +49,8 @@ public class AbsSubmission extends Model {
 		 }
 
 	public static List<AbsSubmission> all(String email) {
-		if(email != null){
 		return find.where().eq("owner.email", email).findList();
-		}
-		return find.all();
+		//return find.all();
 		}
 
 	public static void delete(Long id) {
