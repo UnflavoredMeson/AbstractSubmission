@@ -1,0 +1,58 @@
+@(abssubmissions: List[AbsSubmission], user : User)
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Previous Submissions</title>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/main.css")">
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.at("images/favicon.png")">
+        <script src="@routes.Assets.at("javascripts/jquery-1.9.0.min.js")" type="text/javascript"></script>
+    </head>
+    <body>
+    
+    <div id="pageTop">
+    <div id="pageTopLogo">
+        <a href="#" id="logo"><span>Submitted Abstracts For Conference</span></a>
+    </div>
+    <div id="linksTop">
+        <div id="menu1">
+            <div>
+               <dl id="user">
+                <dt>@user.fullname <span>(@user.email)</span></dt>
+                <dd>
+                    <a href="@routes.Application.logout()">Logout</a>
+                </dd>
+            </dl>
+            </div>
+        </div>
+    </div>
+    <div id="pageTopWrap">
+        <div id="pageTopRest">
+            <div id="menu2">
+                <nav>
+                    <ul>
+                    <a href="@routes.Application.absSubmission()">Submit a New Abstract</a>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    </div>
+            
+        </header>
+        
+	    <div id="pageMiddle">
+    
+    <h2>@abssubmissions.size() submission(s)</h2>
+    
+    <ul>
+        @for(abssubmission <- abssubmissions) {
+			@views.html.abssubmission.item(abssubmission)
+        }
+    </ul>
+    
+</div>
+    </body>
+</html>

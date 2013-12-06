@@ -1,54 +1,37 @@
 @(abssubmissions: List[AbsSubmission], abssubmissionForm: Form[AbsSubmission], user : User)
 
 @import helper._
-
+    
 @main("Submitted Abstracts", user) {
+	
+	    <div id="pageMiddle">
     
-    <h1>@abssubmissions.size() submission(s)</h1>
+    <h2>@abssubmissions.size() submission(s)</h2>
     
-    <ul>
-        @for(abssubmission <- abssubmissions) {
-            <li>
-                @abssubmission.title
-                
-                @abssubmission.cite
-                
-                @abssubmission.link
-                
-                @abssubmission.url
-                
-                @abssubmission.publicationDate
-                
-                @abssubmission.abstractBody
-                <br />
-                <br />
-                @abssubmission.owner.fullname
-                
-                @form(routes.Application.deleteabsSubmission(abssubmission.id)) {
-                    <input type="submit" value="Delete">
-                }
-            </li>
-        }
-    </ul>
     
     <h2>Add a new Abstract</h2>
     
+    <ul class="lists">
+    
     @form(routes.Application.newabsSubmission()) {
         
-        @inputText(abssubmissionForm("title")) 
+        <li>@inputText(abssubmissionForm("title"), '_label -> "Title")</li>
         
-        @inputText(abssubmissionForm("cite"))
+        <li>@inputText(abssubmissionForm("cite"), '_label -> "Authors")</li>
         
-        @inputText(abssubmissionForm("link"))
+        <li>@inputText(abssubmissionForm("link"), '_label -> "Webpage Title")</li>
         
-        @inputText(abssubmissionForm("url"))
+        <li>@inputText(abssubmissionForm("url"), '_label -> "Webpage URL")</li>
         
-        @inputDate(abssubmissionForm("publicationDate"))
+        <li>@inputDate(abssubmissionForm("publicationDate"), '_label -> "Data Originally Published")</li>
       
-        @textarea(abssubmissionForm("abstractBody"), 'rows -> 3, 'cols -> 50)
+        <li>@textarea(abssubmissionForm("abstractBody"), 'rows -> 20, 'cols -> 60, '_label -> "Abstract")</li>
         
-        <input type="submit" value="Create">
+        <li><input type="submit" value="Submit" class="loginbtn"></li>
         
     }
+    </ul>
     
 }
+
+</div>

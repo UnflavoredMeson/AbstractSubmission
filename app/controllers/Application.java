@@ -14,6 +14,11 @@ public class Application extends Controller {
     public static Result index() {
 		return redirect(routes.Application.login());
     }
+    
+    @Security.Authenticated(Secured.class)
+    public static Result viewsubmitted() {
+    	return ok(views.html.submitted.render(AbsSubmission.all(request().username()), User.find.byId(request().username())));
+    }
 
     @Security.Authenticated(Secured.class)
 	public static Result absSubmission() {

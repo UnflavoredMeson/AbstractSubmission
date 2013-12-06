@@ -10,6 +10,9 @@ GET     /absSubmission                  controllers.Application.absSubmission()
 POST    /absSubmission                  controllers.Application.newabsSubmission()
 POST    /absSubmission/:id/delete       controllers.Application.deleteabsSubmission(id: Long)
 
+# views
+GET     /submitted                  controllers.Application.viewsubmitted()
+
 # login
 GET     /login                  	controllers.Application.login()
 POST    /login                      controllers.Application.authenticate()

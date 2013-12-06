@@ -1,0 +1,31 @@
+@(abssubmission: AbsSubmission)
+            
+            @import helper._
+            
+   <div class="post">
+        <h2 class="post-title">
+            <a href="#">@abssubmission.title</a>
+        </h2>
+        <div class="post-metadata">
+            <span class="post-author">by @abssubmission.cite</span>
+            <br />
+            <span class="post-date"> Originally Published on: @abssubmission.publicationDate.format("dd/MM/yyyy")</span>
+            <span class="post-url"> At <a href="@abssubmission.url">@abssubmission.link</a></span>
+        </div>
+        <div class="post-content">
+            @abssubmission.abstractBody
+        </div>
+        
+                
+                <br />
+                <br />
+                <p>Abstract Submitted By: @abssubmission.owner.fullname</p>
+                <br>
+                                @form(routes.Application.deleteabsSubmission(abssubmission.id)) {
+                    <input type="submit" value="Delete" class="loginbtn">
+                }
+    </div>
+
+                
+                
+            

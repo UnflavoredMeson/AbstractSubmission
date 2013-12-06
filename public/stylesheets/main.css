@@ -1,0 +1,141 @@
+body {
+	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+}
+
+#pageTop {
+	background: gray;
+	height: 90px;
+}
+
+#pageTop>#pageTopWrap {
+	width: 1000px;
+	margin: 0px auto;
+	height: 60px;
+}
+
+#linksTop {
+	height: 30px;
+}
+
+#pageTop>#pageTopLogo {
+	margin: 0px auto;
+	margin-left: 20px; width : 455px;
+	float: left;
+	margin-top: 15px;
+	background: white;
+	width: 455px;;
+}
+
+#pageTop>#pageTopWrap>#pageTopRest {
+	height: 60px;
+	width: 545px;
+	float: left;
+}
+
+#pageTop>#linksTop>#menu1 {
+	height: 28px;
+}
+
+#pageTop>#linksTop>#menu1>div {
+	margin-top: 1px;
+	padding: 4px;
+	text-align: right;
+}
+
+#pageTop>#linksTop>#menu1>div>a {
+	text-decoration: none;
+	color: black;
+}
+
+#pageTop>#linksTop>#menu1>div>a:HOVER {
+	color: blue;
+}
+
+#pageMiddle {
+	height: 600px;
+	width: 1000px;
+	margin: 0px auto;
+}
+
+#pageBottom {
+	background: #D9D9D9;
+	padding: 24px;
+	font-size: 12px;
+	color: black;
+	text-align: center;
+	position: relative;
+}
+
+.inner {
+	margin-top: 24px;
+	margin: 0px auto;
+}
+
+#loginform {
+	
+}
+
+.lists {
+	padding: 0;
+	margin: 0 0 0px 0;
+	list-style: none;
+}
+
+.loginbtn {
+	font-size: 15px;
+	padding: 10px;
+	width: 200px;
+	background: #F3F9DD;
+}
+
+.post .post-title {
+    margin: 0;
+}
+
+.post .post-title a {
+    font-size: 36px;
+    color:black;
+    text-decoration: none;
+}
+
+.post .post-metadata {
+    color: black;
+    display: block;
+    font-size: 70%;
+    display: inline-block;
+}
+
+.post .post-author {
+    font-size: 130%;
+    font-weight: bold;
+}
+
+.post .post-metadata a {
+    color: black;
+}
+
+.post .post-content {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    margin: 10px 0 50px 0;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0 2px 0 #BBBBBB;
+}
+
+.post .about {
+    text-indent: -999em;
+    display: block;
+    width: 0; 
+    height: 0; 
+	border-left: 10px solid transparent; 
+	border-right: 10px solid transparent;
+	border-bottom: 10px solid #fff;
+	border-top: 0;
+	position: absolute;
+	top: -6px;
+	left: 24px;
+}
