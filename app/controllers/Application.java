@@ -27,7 +27,7 @@ public class Application extends Controller {
 		    return badRequest(
 		      views.html.index.render(AbsSubmission.all(request().username()), filledForm, User.find.byId(request().username())));
 		  } else {
-			  AbsSubmission.create(filledForm.get(), User.find.byId("chuck@gmail.com"));
+			  AbsSubmission.create(filledForm.get(), User.find.byId(request().username()));
 		    return redirect(routes.Application.absSubmission());  
 		  }
 	}

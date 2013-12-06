@@ -27,7 +27,7 @@ public class AbsSubmission extends Model {
 	public Date publicationDate;
 	@Lob
 	public String abstractBody;
-	@OneToMany
+	@ManyToOne
 	public User owner;	
 	
 	

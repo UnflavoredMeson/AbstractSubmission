@@ -22,6 +22,7 @@
                 @abssubmission.abstractBody
                 <br />
                 <br />
+                @abssubmission.owner.fullname
                 
                 @form(routes.Application.deleteabsSubmission(abssubmission.id)) {
                     <input type="submit" value="Delete">
@@ -45,7 +46,7 @@
         @inputDate(abssubmissionForm("publicationDate"))
         
         @inputText(abssubmissionForm("abstractBody"))
-       
+       @input
         <input type="submit" value="Create">
         
     }
